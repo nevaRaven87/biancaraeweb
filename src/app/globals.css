@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #fdf6ee;
+  --color-espresso: #3d2c29;
+  --color-terracotta: #c4715a;
+  --color-terracotta-dark: #a85a45;
+  --color-sage: #7a9e7e;
+  --color-sage-dark: #628566;
+  --color-coral: #e8655a;
+  --color-coral-dark: #d04f44;
+  --color-lavender: #b8a9c9;
+  --color-lavender-dark: #9d8bb3;
+  --color-golden: #e8c170;
+  --color-clay: #d4a574;
+  --font-display: var(--font-fredoka);
+  --font-body: var(--font-dm-sans);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-espresso font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-fredoka), system-ui, sans-serif;
+  }
+
+  .blob-bg {
+    background-color: #fdf6ee;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(196, 113, 90, 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(122, 158, 126, 0.18), transparent),
+      radial-gradient(ellipse 50% 60% at 60% 80%, rgba(184, 169, 201, 0.15), transparent);
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 3s ease-in-out infinite;
+  }
+
+  .wavy-divider {
+    height: 56px;
+    background-color: #fdf6ee;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 56' preserveAspectRatio='none'%3E%3Cpath fill='%233d2c29' fill-opacity='0.08' d='M0,28 C200,56 400,0 600,28 C800,56 1000,0 1200,28 L1200,56 L0,56 Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
