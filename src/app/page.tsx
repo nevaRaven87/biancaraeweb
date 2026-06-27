@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CtaCard } from "@/components/CtaCard";
+import { withBasePath } from "@/lib/base-path";
 import { siteConfig } from "@/data/site";
 import { createMetadata } from "@/lib/metadata";
 
@@ -79,7 +80,7 @@ export default function HomePage() {
                 <div className="absolute inset-4 rotate-3 rounded-[2.5rem] border-4 border-dashed border-terracotta/40 bg-white/80 shadow-xl backdrop-blur-sm" />
                 <div className="absolute inset-0 flex items-end justify-center pb-4">
                   <Image
-                    src="/logo.png"
+                    src={withBasePath("/logo.png")}
                     alt="Hand-painted pink party cat ceramic figurine by Bianca Rae"
                     width={320}
                     height={400}

@@ -4,7 +4,11 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/data/site";
+import { withBasePath } from "@/lib/base-path";
 import "./globals.css";
+
+const logoPath = withBasePath("/logo.png");
+const logoUrl = new URL("/logo.png", `${siteConfig.url}/`).toString();
 
 const fredoka = Fredoka({
   variable: "--font-fredoka",
@@ -42,8 +46,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: logoPath,
+    apple: logoPath,
   },
   openGraph: {
     type: "website",
@@ -52,13 +56,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [{ url: "/logo.png", alt: "Made By Bianca Rae party cat ceramic" }],
+    images: [{ url: logoUrl, alt: "Made By Bianca Rae party cat ceramic" }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["/logo.png"],
+    images: [logoUrl],
   },
 };
 

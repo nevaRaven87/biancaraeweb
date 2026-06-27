@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/base-path";
 
 type LogoProps = {
   size?: "sm" | "md" | "lg" | "xl";
@@ -33,7 +34,7 @@ export function Logo({
         className={`relative shrink-0 overflow-hidden rounded-full border-2 border-espresso/10 bg-white shadow-md ${container}`}
       >
         <Image
-          src="/logo.png"
+          src={withBasePath("/logo.png")}
           alt="Made By Bianca Rae — pink party cat ceramic figurine"
           width={image}
           height={image}

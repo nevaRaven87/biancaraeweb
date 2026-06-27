@@ -26,6 +26,7 @@ The workflow sets the site URL automatically. To test a GitHub Pages build local
 
 ```powershell
 $env:GITHUB_PAGES = "true"
+$env:NEXT_PUBLIC_BASE_PATH = "/biancaraeweb"
 $env:NEXT_PUBLIC_SITE_URL = "https://YOUR_GITHUB_USERNAME.github.io/biancaraeweb"
 npm run build
 npx serve out

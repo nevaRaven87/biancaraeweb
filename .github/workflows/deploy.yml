@@ -30,6 +30,7 @@ jobs:
       - name: Build static site
         env:
           GITHUB_PAGES: "true"
+          NEXT_PUBLIC_BASE_PATH: /biancaraeweb
           NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/biancaraeweb
         run: npm run build
 
